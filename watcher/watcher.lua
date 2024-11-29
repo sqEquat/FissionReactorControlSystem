@@ -1,3 +1,5 @@
+package.path = package.path .. ";../?.lua;../base/?.lua"
+
 local ChemicalStack = require("base.entities.ChemicalStack")
 local FissionReactor = require("base.entities.FissionReactor")
 
