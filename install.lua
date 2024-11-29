@@ -55,7 +55,7 @@ local function process_folder(path, local_versions, updated_versions)
             local filename = file.name
             local sha = file.sha -- GitHub's unique hash for the file
             local file_url = file.download_url
-            local relative_path = fs.combine(shell.resolve(path), filename)
+            local relative_path = fs.combine(path, filename)
 
             updated_versions[relative_path] = sha
 
@@ -99,7 +99,7 @@ end
 local function update_base(local_versions, updated_versions)
         -- Process the /base folder recursively
         print("Starting update process for /base...")
-        process_folder("base", local_versions, updated_versions)
+        process_folder(shell.resolve("base"), local_versions, updated_versions)
         print("All base scripts processed.")
 end
 
@@ -112,7 +112,7 @@ local function update_module(local_versions, updated_versions)
 
         if module:lower() == "watcher" then
             print("Updating FRCS Watcher module...")
-            process_folder("watcher", local_versions, updated_versions)
+            process_folder(shell.resolve("watcher"), local_versions, updated_versions)
         else
             print("No such module found: " .. module)
         end
