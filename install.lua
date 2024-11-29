@@ -128,7 +128,7 @@ local function main()
     local updated_versions = {}
 
     -- Process libs, update local verisions
-    update_libs(local_versions, updated_versions)
+    -- update_libs(local_versions, updated_versions)
 
     -- Process base scripts, update local versions
     update_base(local_versions, updated_versions)
