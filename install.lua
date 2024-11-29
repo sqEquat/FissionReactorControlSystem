@@ -120,7 +120,7 @@ local function update_module(local_versions, updated_versions)
         local module = arg[1]
         print("Starting update process for module " .. module .. "...")
 
-        if module:lower() == "wathcer" then
+        if module:lower() == "watcher" then
             print("Updating FRCS Watcher module...")
             process_folder("watcher", local_versions, updated_versions)
         else
