@@ -1,4 +1,4 @@
-local ChemicalStack = require("entities.ChemicalStack")
+local ChemicalStack = require("base.entities.ChemicalStack")
 
 FissionReactor = {}
 FissionReactor.__index = FissionReactor
