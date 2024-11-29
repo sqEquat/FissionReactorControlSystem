@@ -8,7 +8,7 @@ local base_api_url = string.format(
 )
 
 -- Local versioning file
-local version_file = "./lib_versions.txt"
+local version_file = shell.resolve("lib_versions.txt")
 
 -- Function to fetch JSON data from a URL
 local function fetch_json(url)
@@ -55,7 +55,7 @@ local function process_folder(path, local_versions, updated_versions)
             local filename = file.name
             local sha = file.sha -- GitHub's unique hash for the file
             local file_url = file.download_url
-            local relative_path = fs.combine(path, filename)
+            local relative_path = fs.combine(shell.resolve(path), filename)
 
             updated_versions[relative_path] = sha
 
