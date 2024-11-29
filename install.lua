@@ -8,17 +8,7 @@ local base_api_url = string.format(
 )
 
 -- Local versioning file
-local version_file = "lib_versions.txt"
-
--- Ensure the /lib directory exists
-if not fs.exists("lib") then
-    fs.makeDir("lib")
-end
-
--- Ensure the /base directory exists
-if not fs.exists("base") then
-    fs.makeDir("base")
-end
+local version_file = "./lib_versions.txt"
 
 -- Function to fetch JSON data from a URL
 local function fetch_json(url)
